@@ -94,8 +94,7 @@ exports.put_expense = async (req, res) => {
             description: req.body.description,
             category: req.body.category,
             dateofexpense: req.body.dateofexpense,
-            updatedAt: new Data(),
-            createdBy: req.body.createdBy,
+            updatedAt: req.body.updatedAt,
             amount: req.body.amount
         }
         await Expense.findByIdAndUpdate(_id, updatedData)
