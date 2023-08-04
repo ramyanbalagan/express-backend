@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const User = require('../models/LoginModel')
-
+const { generateToken } = require('../middlewares/JWT')
 
 exports.post_user = async (req, res) => {
     try {
@@ -16,16 +16,18 @@ exports.post_user = async (req, res) => {
                 password: userData.password
             })
             await newUser.save();
+            const token = generateToken(newUser);
             return res.status(200).json({
                 status: 'success',
-                results: newUser
+                token: token
             })
         }
 
         if (userData.email === user.email && userData.password === user.password){
+            const token = generateToken(user);
             return res.status(200).json({
                 status: 'success',
-                results: user
+                token: token,
             }) 
         } else {
             return res.status(404).json({

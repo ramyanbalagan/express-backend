@@ -1,8 +1,14 @@
 const mongoose = require('mongoose')
 
 const loginSchema = mongoose.Schema({
-    email: String,
-    password: String
+    email: {
+        type: String,
+        required: true
+    },
+    password: {
+        type: String,
+        required: true
+    }
 })
 
-module.exports = mongoose.model('auth', loginSchema)
+module.exports = mongoose.model('authjwt', loginSchema)

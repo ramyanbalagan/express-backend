@@ -4,7 +4,7 @@ const cors = require('cors');
 const { default: mongoose } = require('mongoose');
 
 const authRoute = require('./routes/AuthRoute')
-const expenseRoute = require('./routes/ExpenseRoute')
+const taskRoute = require('./routes/TasksRoute')
 
 require('dotenv').config();
 
@@ -33,4 +33,4 @@ app.listen(8080, (req, res) => {
 })
 
 app.use('/api', authRoute);
-app.use('/api', expenseRoute)
+app.use('/api', taskRoute)
