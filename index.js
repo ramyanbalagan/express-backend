@@ -5,6 +5,8 @@ const { default: mongoose } = require('mongoose');
 const bcrypt = require('bcryptjs');
 const session = require('express-session');
 const User = require('./models/LoginModel')
+const path = require('path');
+
 
 require('dotenv').config();
 app.use(cors())
