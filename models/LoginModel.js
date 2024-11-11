@@ -8,6 +8,18 @@ const loginSchema = mongoose.Schema({
     password: {
         type: String,
         required: true
+    },
+    username: {
+        type: String,
+        required: true
+    },
+    phone: {
+        type: String,
+        required: true
+    },
+    profession: {
+        type: String,
+        required: true
     }
 })
 
