@@ -20,7 +20,7 @@ app.use(session({
 }));
 
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '..', 'views')); // This points to the 'views' folder in the root directory
+app.set('views', path.join(__dirname, 'views')); // This points to the 'views' folder in the root directory
 app.use(express.static('public'));
 
 const mongoDB = process.env.MONGO_DB
